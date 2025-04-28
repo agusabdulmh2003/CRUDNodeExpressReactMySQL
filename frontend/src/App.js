@@ -4,6 +4,7 @@ import Register from "./components/RegisterForm";
 import UserList from "./components/UserList";
 import AddUser from "./components/AddUser";
 import EditUser from "./components/EditUser";
+import ProtectedRoute from "./components/ProtectedRoute"; // ← tambahan
 
 function App() {
   return (
@@ -11,9 +12,17 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/" element={<UserList />} />
-        <Route path="/add" element={<AddUser />} />
-        <Route path="/edit/:id" element={<EditUser />} />
+
+        {/* Proteksi route di bawah ini */}
+        <Route path="/" element={
+          <ProtectedRoute><UserList /></ProtectedRoute>
+        } />
+        <Route path="/add" element={
+          <ProtectedRoute><AddUser /></ProtectedRoute>
+        } />
+        <Route path="/edit/:id" element={
+          <ProtectedRoute><EditUser /></ProtectedRoute>
+        } />
       </Routes>
     </BrowserRouter>
   );
