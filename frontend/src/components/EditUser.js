@@ -2,15 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
-/*************  ✨ Windsurf Command ⭐  *************/
-/**
- * EditUser is a component that allows users to edit the
- * details of another user. The user ID is passed as a
- * parameter in the URL. The component fetches the user
- * details from the API and displays them in a form. The
- * user can then edit the details and submit the form. The
- * component will update the user details in the API.
-/*******  7d5a63f1-4078-43ba-a77c-f546de38141f  *******/
 const EditUser = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
